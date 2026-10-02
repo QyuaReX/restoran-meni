@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 
-// Konfiguracija konekcije na bazu (prilagodi šifru svojim postavkama)
+// Konfiguracija konekcije na bazu
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
