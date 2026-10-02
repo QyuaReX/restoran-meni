@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meni - Restoran</title>
+    <style>
+        /* Osnovne postavke za resetovanje margina i fontova */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Centriranje sadržaja za mobilne ekrane */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa; /* Nježna svijetla pozadina */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Glavni okvir koji drži sadržaj */
+        .container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Stil za logotip */
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        /* Stil za dugme */
+        .btn-menu {
+            display: inline-block;
+            background-color: #e67e22; /* Narandžasta boja - slobodno zamijeni hex kodom restorana */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
+        }
+
+        /* Efekat prilikom dodira (tap) ili prelaska mišem */
+        .btn-menu:hover {
+            background-color: #d35400;
+        }
+        
+        .btn-menu:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Slika logotipa: Pobrini se da se slika zove 'logo.png' i da je u istom folderu -->
+        <img src="logo.png" alt="Logotip restorana" class="logo">
+        
+        <h1>Dobrodošli</h1>
+        <p>Pogledajte našu ponudu hrane i pića</p>
+
+        <!-- Dugme koje otvara tvoj PDF -->
+        <a href="meni.pdf" class="btn-menu">Otvori meni</a>
+    </div>
+
+</body>
+</html>
