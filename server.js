@@ -13,7 +13,7 @@ app.use(express.static(__dirname));
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'tvoja_sifra', // Lokalna šifra za tvoj MacBook
+    password: process.env.DB_PASSWORD || 'admin123',
     database: process.env.DB_NAME || 'digitalni_meni',
     port: process.env.DB_PORT || 3306,
     waitForConnections: true,
