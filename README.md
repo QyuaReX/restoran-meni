@@ -12,24 +12,24 @@ This project represents an MVP (Minimum Viable Product) version of a full-stack 
 ## 🛠️ Tech Stack
 
 *   **Frontend:** HTML5, CSS3, Vanilla JavaScript
-*   **Backend:** Node.js, Express.js[cite: 1]
-*   **Database:** MySQL (cloud-hosted)[cite: 1]
-*   **Deployment:** Render.com (Backend) / Aiven (Database)[cite: 1]
+*   **Backend:** Node.js, Express.js
+*   **Database:** MySQL (cloud-hosted)
+*   **Deployment:** Render.com (Backend) / Aiven (Database)
 
 ## 📂 Project Structure[cite: 1]
 
-- `index.html` - Main user interface (Frontend)[cite: 1]
-- `server.js` - Node.js API and server configuration[cite: 1]
-- `logo.png` - Graphical resources[cite: 1]
-- `package.json` - Node.js dependencies (Express, MySQL2, CORS)[cite: 1]
+- `index.html` - Main user interface (Frontend)
+- `server.js` - Node.js API and server configuration
+- `logo.png` - Graphical resources
+- `package.json` - Node.js dependencies (Express, MySQL2, CORS)
 
-## 💻 Running the Project Locally[cite: 1]
+## 💻 Running the Project Locally
 
-If you want to run the project on your computer for further development:[cite: 1]
+If you want to run the project on your computer for further development:
 
-1. **Clone the repository:**[cite: 1]
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/tvoj-username/restoran-meni.git](https://github.com/tvoj-username/restoran-meni.git)
+   git clone [https://github.com/QyuaReX/restoran-meni.git](https://github.com/QyuaReX/restoran-meni.git)
 
 2. **Install dependencies:**
    ```bash
