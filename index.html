@@ -3,95 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meni - Restoran</title>
+    <title>Digitalni Meni</title>
     <style>
-        /* Osnovne postavke za resetovanje margina i fontova */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Moderni CSS reset i varijable */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #7f8c8d;
         }
 
-        body {
-            /* Centriranje sadržaja za mobilne ekrane */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f8f9fa; /* Nježna svijetla pozadina */
-            color: #333;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--bg-color); color: var(--text-main); padding-bottom: 50px; }
+
+        /* Header restorana */
+        .header {
+            background-color: var(--card-bg);
             text-align: center;
-            padding: 20px;
-        }
-
-        /* Glavni okvir koji drži sadržaj */
-        .container {
-            background-color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        /* Stil za logotip */
-        .logo {
-            width: 120px;
-            height: auto;
+            padding: 30px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             margin-bottom: 20px;
         }
+        .header img { width: 100px; border-radius: 50%; margin-bottom: 10px; }
+        .header h1 { color: var(--primary-color); font-size: 1.8rem; }
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
+        /* Kontejner za meni */
+        .menu-container { max-width: 600px; margin: 0 auto; padding: 0 15px; }
+
+        /* Kategorije */
+        .category-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        p {
-            font-size: 1rem;
-            color: #7f8c8d;
-            margin-bottom: 30px;
+        /* Artikli kartice */
+        .item-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        /* Stil za dugme */
-        .btn-menu {
-            display: inline-block;
-            background-color: #e67e22; /* Narandžasta boja - slobodno zamijeni hex kodom restorana */
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
+        .item-info { flex: 1; padding-right: 15px; }
+        .item-name { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
+        .item-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
+        .item-price {
+            font-size: 1.2rem;
             font-weight: bold;
-            padding: 15px 30px;
+            color: var(--accent-color);
+            background: #fcf3eb;
+            padding: 8px 12px;
             border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: 100%;
-            box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
-        }
-
-        /* Efekat prilikom dodira (tap) ili prelaska mišem */
-        .btn-menu:hover {
-            background-color: #d35400;
-        }
-        
-        .btn-menu:active {
-            transform: scale(0.98);
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Slika logotipa: Pobrini se da se slika zove 'logo.png' i da je u istom folderu -->
-        <img src="logo.png" alt="Logotip restorana" class="logo">
-        
-        <h1>Dobrodošli</h1>
-        <p>Pogledajte našu ponudu hrane i pića</p>
+<div class="header">
+    <img id="restoran-logo" src="https://via.placeholder.com/100" alt="Logo restorana">
+    <h1 id="restoran-naziv">Učitavanje...</h1>
+</div>
 
-        <!-- Dugme koje otvara tvoj PDF -->
-        <a href="meni.pdf" class="btn-menu">Otvori meni</a>
-    </div>
+<div class="menu-container" id="menu-container">
+    <!-- Ovdje će JavaScript automatski ubaciti kategorije i artikle -->
+</div>
 
+<script>
+    // 1. OVO JE TVOJA "MINI BAZA" (Mock Database)
+    // Kada pređeš na backend, ovaj objekat ćeš dobijati preko fetch() komande iz MySQL baze
+    const bazaPodataka = {
+        restoran: {
+            id: 1,
+            naziv: "Restoran & Lounge Sarajevo",
+            logo: "https://cdn-icons-png.flaticon.com/512/3170/3170733.png"
+        },
+        kategorije: [
+            { id: "topli-napici", naziv: "Topli napici" },
+            { id: "glavna-jela", naziv: "Glavna jela" },
+            { id: "deserti", naziv: "Deserti" }
+        ],
+        artikli: [
+            { id: 1, id_kategorije: "topli-napici", naziv: "Espresso", opis: "100% Arabica blend", cijena: "2.50 KM" },
+            { id: 2, id_kategorije: "topli-napici", naziv: "Cappuccino", opis: "Espresso sa pjenom od mlijeka", cijena: "3.50 KM" },
+            { id: 3, id_kategorije: "glavna-jela", naziv: "Pileći Fileti", opis: "Grilovani fileti sa sezonskim povrćem i pomfritom", cijena: "12.00 KM" },
+            { id: 4, id_kategorije: "glavna-jela", naziv: "Burger Classic", opis: "100% junetina, cheddar sir, karamelizovani luk", cijena: "14.50 KM" },
+            { id: 5, id_kategorije: "deserti", naziv: "Čokoladni Soufflé", opis: "Topli kolač sa tečnim centrom i sladoledom od vanilije", cijena: "7.00 KM" }
+        ]
+    };
+
+    // 2. FUNKCIJA ZA ISCRTAVANJE MENIJA
+    function renderMenu() {
+        // Postavi podatke o restoranu
+        document.getElementById('restoran-naziv').textContent = bazaPodataka.restoran.naziv;
+        document.getElementById('restoran-logo').src = bazaPodataka.restoran.logo;
+
+        const container = document.getElementById('menu-container');
+        container.innerHTML = ''; // Očisti kontejner
+
+        // Prođi kroz svaku kategoriju
+        bazaPodataka.kategorije.forEach(kategorija => {
+            // Filtriraj samo artikle koji pripadaju trenutnoj kategoriji
+            const artikliUKategoriji = bazaPodataka.artikli.filter(artikal => artikal.id_kategorije === kategorija.id);
+
+            // Ako kategorija ima artikle, prikaži je
+            if (artikliUKategoriji.length > 0) {
+                // Dodaj naslov kategorije
+                const naslov = document.createElement('h2');
+                naslov.className = 'category-title';
+                naslov.textContent = kategorija.naziv;
+                container.appendChild(naslov);
+
+                // Dodaj sve artikle za tu kategoriju
+                artikliUKategoriji.forEach(artikal => {
+                    const artikalDiv = document.createElement('div');
+                    artikalDiv.className = 'item-card';
+                    artikalDiv.innerHTML = `
+                            <div class="item-info">
+                                <div class="item-name">${artikal.naziv}</div>
+                                <div class="item-desc">${artikal.opis}</div>
+                            </div>
+                            <div class="item-price">${artikal.cijena}</div>
+                        `;
+                    container.appendChild(artikalDiv);
+                });
+            }
+        });
+    }
+
+    // Pokreni funkciju kada se stranica učita
+    renderMenu();
+</script>
 </body>
 </html>
