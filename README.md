@@ -2,6 +2,9 @@
 
 This project represents an MVP (Minimum Viable Product) version of a full-stack web application for digital menus. It allows restaurant guests instant access to the menu by simply tapping their smartphone on an **NFC tag**, without the need to install additional applications or scan PDF files.
 
+## 🟢 Live Demo
+* **[Check it out!](https://restoran-meni.onrender.com)**
+
 ## 🚀 Main Features
 
 *   **Contactless Access:** Optimized for NFC tags (NTAG213/215) using unique URL links.
